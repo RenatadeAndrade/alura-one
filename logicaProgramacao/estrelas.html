@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function pulaLinha() {
+
+            document.write("<br>");
+        }
+
+        function mostra(frase) {
+
+            document.write(frase);
+            pulaLinha();
+        }
+        var caracter = prompt("Informe qual caracter quer imprimir: ")
+        var numeroLinhas = parseInt(prompt("Informe quantas linhas quer imprimir: "));
+        var numeroColunas = parseInt(prompt("Informe quantas colunas quer imprimir: "));
+        for(var linha =1; linha <= numeroLinhas; linha++){
+            for(var coluna = 1; coluna <= numeroColunas; coluna++){
+                document.write(caracter);
+            }
+            pulaLinha();
+        }
+    </script>
+</body>
+
+</html>

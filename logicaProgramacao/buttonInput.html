@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Digite um número e clique no botão para revelar o número secreto e ver se você acertou </h2>
+    <input/>
+    <button>
+        Clique aqui
+    </button>
+
+    <script>
+        var numero = 3;
+        var input = document.querySelector("input");
+
+        function verifica(){
+           if(input.value == numero){
+            document.write("Parabéns! Você acertou.")
+        }else{
+            document.write("Que pena! Você errou.")
+        } 
+        }
+        
+        var button = document.querySelector("button");
+        button.onclick = verifica;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intervalo entre 30 e 40</title>
+</head>
+<body>
+    <script>
+        function pulaLinha(){
+            document.write("<br><br>");
+        }
+    
+        function exibe(frase){
+            document.write(frase);
+            pulaLinha();
+        }
+    
+        var numeroInicial = 30;
+        var numeroFinal = 40;
+
+        exibe("Imprimindo números: ")
+        while(numeroInicial <= numeroFinal){
+            if(numeroInicial == 33 || numeroInicial == 37){
+            numeroInicial++;
+            }else{
+            exibe(numeroInicial);
+            numeroInicial++
+            }
+        }
+        exibe("***FIM***");
+
+        </script>
+</body>
+</html>

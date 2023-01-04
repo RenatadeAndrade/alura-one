@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pode ou não pode dirigir</title>
+</head>
+<body>
+   
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function exibe(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var idade = parseInt(prompt("Qual é sua idade?"));
+    var temCarteira = prompt("Tem carteira? Responda S ou N");
+
+    if(idade >= 18 && temCarteira == "S" || temCarteira == "s"){
+        
+        exibe("Você pode dirigir, porém atenção: Se beber não dirija!")
+    }else{
+        exibe("Você não pode dirigir!")
+    }
+
+</script>
+</body>
+</html>

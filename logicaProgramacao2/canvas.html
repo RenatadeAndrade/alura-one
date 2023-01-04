@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Canvas</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+<script>
+    var screen = document.querySelector('canvas');
+
+    var pincel = screen.getContext('2d');
+
+    //retângulo
+    pincel.fillStyle = 'green';
+    pincel.fillRect(0, 0, 600, 400);
+
+    //losango
+    pincel.fillStyle = 'yellow';
+    pincel.beginPath();
+    pincel.moveTo(300, 50);
+    pincel.lineTo(50, 200);
+    pincel.lineTo(300, 350);
+    pincel.lineTo(550, 200);
+    pincel.fill();
+
+    //círculo
+    pincel.fillStyle = 'darkblue';
+    pincel.beginPath();
+    pincel.arc(300, 200, 105, 0, 2 * 3.14);
+    pincel.fill();
+
+    //faixa branca
+    pincel.fillStyle = 'white'
+    pincel.beginPath();
+    pincel.moveTo(200, 185);
+    pincel.lineTo(400, 185);
+    pincel.lineTo(400, 215);
+    pincel.lineTo(200, 215);
+    pincel.fill();
+
+    //nome
+    pincel.fillStyle = 'green';
+    pincel.font = '18px Franklin Gothic';
+    pincel.fillText('ORDEM E PROGRESSO', 214, 207);
+</script>
+</html>

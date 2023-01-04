@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+
+    var screen = document.querySelector('canvas');
+    var pincel = screen.getContext('2d');
+    pincel.fillStyle = 'gray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var x = 20;
+    var y = 20;
+
+    // códigos do teclado
+
+    var esquerda = 37;
+    var cima = 38;
+    var direita = 39;
+    var baixo = 40;
+
+    // taxa de incremento
+    var taxa = 10;
+
+    function desenhaCirculo(x, y, raio) {
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpaScreen() {
+
+        pincel.clearRect(0, 0, 600, 400);
+    }
+
+    function atualizaScreen() {
+
+        limpaScreen();
+        desenhaCirculo(x, y, 10);
+    }
+
+    setInterval(atualizaScreen, 20);
+
+    function leDoTeclado(evento) {
+
+        if(evento.keycode == esquerda){
+            x = x - taxa;
+        }else if(evento.keycode == direita){
+            x = x + taxa;
+        }else if(evento.keycode == cima){
+            y = y + taxa;
+        }else if(evento.keycode == baixo){
+            y = y - taxa;
+        }
+    }
+
+document.onkeydown = leDoTeclado;
+
+    </script>
+
+</body>
+
+</html>

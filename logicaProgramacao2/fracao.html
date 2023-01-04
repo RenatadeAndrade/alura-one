@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+<script>
+    function desenhaFracao(x, y, tamanho, cor){
+        var screen = document.querySelector('canvas');
+        var pincel = screen.getContext('2d');
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, tamanho, tamanho, cor);
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(x, y, tamanho, tamanho);
+    }
+    function escreveTexto(texto, x, y){
+        var screen = document.querySelector('canvas');
+        var pincel = screen.getContext('2d');
+
+        pincel.font = '20px Verdana';
+        pincel.fillStyle = 'black';
+        pincel.fillText(texto, x, y);
+    }
+    escreveTexto('Qual é a fração? ', 50, 30);
+
+    var y = 50;
+
+    desenhaFracao(50, y, 100, 'green');
+    desenhaFracao(150, y, 100, 'green');
+    desenhaFracao(250, y, 100, 'green');
+    desenhaFracao(350, y, 100, 'white');
+
+</script>
+</html>

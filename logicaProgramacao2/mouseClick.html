@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse click</title>
+</head>
+<body>
+    <canvas width="500" height="1200"></canvas>
+</body>
+<script>
+    var screen = document.querySelector("canvas");
+    var pincel = screen.getContext('2d');
+
+    pincel.fillStyle = 'darkgreen'
+    pincel.fillRect(0, 0, 500, 1200);
+
+    pincel.fillStyle = 'black';
+        //Olhos
+        pincel.fillRect(115, 110, 90, 90);
+        pincel.fillRect(285, 110, 90, 90);
+
+        //Nariz
+        pincel.fillRect(205, 200, 80, 130);
+
+        // Boca ou barba
+        pincel.fillStyle = 'black';
+        pincel.fillRect(160, 250, 45, 150);
+        pincel.fillRect(280, 250, 45, 150);
+         //pés
+        pincel.fillRect(0, 1100, 500, 100);
+
+        //corpo
+        pincel.fillStyle = 'white';
+        pincel.fillRect(0, 400, 50, 1000);
+        pincel.fillRect(450, 400, 50, 1000);
+
+       
+        //contorno cabeça e pés
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(0, 0, 500, 400);
+        pincel.strokeRect(0, 1100, 500, 100);
+
+
+    function exibeAlerta(evento){
+        var x = evento.pageX - screen.offsetLeft;
+        var y = evento.pageY - screen.offsetTop;
+        alert(x+','+y);
+        
+    }
+    screen.onclick = exibeAlerta;
+</script>
+</html>

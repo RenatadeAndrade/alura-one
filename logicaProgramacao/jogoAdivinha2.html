@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Adivinha Número Melhorado</title>
+</head>
+<body>
+    <script>
+        function pulaLinha(){
+            document.write("<br><br>");
+        }
+
+        function exibe(frase){
+            document.write(frase);
+            pulaLinha();
+        }
+
+        function sorteia(numeroLimite){
+
+            return Math.round(Math.random()*numeroLimite);
+        }
+
+        var numeroPensado = sorteia(10);
+        var numeroTentativas = 1;
+        
+    while(numeroTentativas <= 3){
+           var chutarNumero = parseInt(prompt("Tente adivinhar um número acima de 0."));
+           break;
+
+        if(chutarNumero == numeroPensado){
+            exibe("Você acertou! Clique na próxima janela para receber seu prêmio.O número pensado foi "+numeroPensado);
+            
+            setTimeout(function(){
+                alert("Clique aqui.")
+                alert("Parabéns!!! ヽ(^o^)丿  Você ganhou [̲̅$̲̅(̲̅ιοο̲̅)̲̅$̲̅] ");
+        },600);           
+
+        }else{
+            if(chutarNumero > numeroPensado){
+                exibe("Que pena, você errou! Seu chute é maior que o número pensado! Tente novamente.");
+        }else{
+                exibe("Que pena, você errou! Seu chute é menor que o número pensado! Tente novamente.");
+      }
+      
+    }
+    numeroTentativas++;
+}
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa do Mundo</title>
+</head>
+<body>
+    <script>
+        function pulaLinha(){
+            document.write("<br><br>");
+        }
+        function exibe(frase){
+            document.write(frase);
+            pulaLinha();
+        }
+
+        var anoCopa = 1930;
+        
+        var anoLimite = parseInt(prompt("Entre com o ano limite: "));
+
+        while(anoCopa <= anoLimite){
+            exibe("Teve copa no ano "+anoCopa);
+            anoCopa = anoCopa + 4;
+        }
+
+        exibe("***FIM***")
+    </script>
+</body>
+</html>

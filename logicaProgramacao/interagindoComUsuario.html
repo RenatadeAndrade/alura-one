@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de IMC com dados do usuário</title>
+</head>
+<body>
+    <script>
+        function pulaLinha(){
+
+            document.write("<br><br>");
+
+            }
+            function exibe(frase){
+
+                document.write(frase);
+                pulaLinha();
+            }
+
+            function calculaImc(altura, peso){
+
+                var imc = peso / (altura * altura);
+
+                return imc;
+            }
+            var nome = prompt("Informe seu nome: ");
+            var alturaInformada = prompt("Informe sua altura: ");
+            var pesoInformado = prompt("Informe seu peso: ");
+            var imcCalculado = calculaImc(alturaInformada, pesoInformado);
+
+            exibe(nome + ", seu IMC é: "+imcCalculado.toFixed(2));
+
+            if(imcCalculado < 16){
+                exibe("Seu peso se enquadra na categoria: MAGREZA GRAU III")
+            }
+            if(imcCalculado >= 16 && imcCalculado <= 16.9){
+                exibe("Seu peso se enquadra na categoria: MAGREZA GRAU II")
+            }
+            if(imcCalculado >= 17 && imcCalculado <= 18.4){
+                exibe("Seu peso se enquadra na categoria: MAGREZA GRAU I")
+            }
+            if(imcCalculado >= 18.5 && imcCalculado <= 24.9){
+                exibe("Seu peso se enquadra na categoria: EUTROFIA (Peso adequado)")
+            }
+            if(imcCalculado >= 25 && imcCalculado <= 29.9){
+                exibe("Seu peso se enquadra na categoria: PRÉ OBESIDADE")
+            }
+            if(imcCalculado >= 30 && imcCalculado <= 34.9){
+                exibe("Seu peso se enquadra na categoria: OBESIDADE MODERADA - GRAU I")
+            }
+            if(imcCalculado >= 35 && imcCalculado <= 39.9){
+                exibe("Seu peso se enquadra na categoria: OBESIDADE SEVERA - GRAU II")
+            }
+            if(imcCalculado >= 40){
+                exibe("Seu peso se enquadra na categoria: OBESIDADE MÓRBIDA - GRAU III")
+            }
+            
+
+    </script>
+</body>
+</html>

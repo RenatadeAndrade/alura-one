@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Adivinha Número</title>
+</head>
+<body>
+    <script>
+        function pulaLinha(){
+            document.write("<br><br>");
+        }
+        function exibe(frase){
+            document.write(frase);
+            pulaLinha();
+        }
+
+        var numeroSorteado = Math.round(Math.random()*10);
+        
+        var numeroTentativas = 1;
+
+        while(numeroTentativas <= 3){
+
+            var chutarNumero = parseInt(prompt("Tente adivinhar um número acima de 0."));
+
+            if(chutarNumero == numeroSorteado){
+//Está dando erro no exibe mas não no alert
+                exibe("Você acertou! Parabéns.");       
+            break;    
+
+        }else{
+
+            alert("Que pena, você errou... Tente novamente");
+        }
+
+        numeroTentativas++;
+    }
+        
+    </script>
+</body>
+</html>
